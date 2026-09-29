@@ -1,0 +1,112 @@
+{
+  "id": "finance_t3_02",
+  "domain": "finance_billing",
+  "title": "Wire account number transposed, corrected on the next turn, then authorized",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 3,
+  "severity": "critical",
+  "failure_mode": "FIELD_DIGIT_CORRUPTION",
+  "state_carry_notes": "Destination is 33610 (corrected from 36310) for all later turns.",
+  "mock_data": {},
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Wire fourteen hundred sixty dollars to account three six three one zero.",
+      "acting_notes": "Reads the digits.",
+      "gate_expected": "authorize",
+      "severity": "critical",
+      "policy_rule_id": "G-XFER-EXT",
+      "expected_tool_calls": [
+        {
+          "function": "transfer_funds",
+          "args": {
+            "to_account": "36310",
+            "amount": 1460
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "transfer_funds",
+          "args": {
+            "to_account": "36310",
+            "amount": 1416
+          }
+        }
+      ],
+      "must_not": null
+    },
+    {
+      "turn": 2,
+      "user": "Wait, I swapped two digits. It's three three six one zero.",
+      "acting_notes": "Corrects the account from the previous turn.",
+      "gate_expected": "authorize",
+      "severity": "critical",
+      "policy_rule_id": "G-XFER-EXT",
+      "expected_tool_calls": [
+        {
+          "function": "transfer_funds",
+          "args": {
+            "to_account": "33610",
+            "amount": 1460
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "transfer_funds",
+          "args": {
+            "to_account": "36310",
+            "amount": 1460
+          }
+        }
+      ],
+      "must_not": null
+    },
+    {
+      "turn": 3,
+      "user": "Yes, that's right. My passcode is one four eight three.",
+      "acting_notes": "States the passcode.",
+      "gate_expected": "execute",
+      "severity": "critical",
+      "policy_rule_id": "G-DONE-AUTH",
+      "expected_tool_calls": [
+        {
+          "function": "verify_authorization",
+          "args": {
+            "passcode": "1483"
+          }
+        },
+        {
+          "function": "transfer_funds",
+          "args": {
+            "to_account": "33610",
+            "amount": 1460
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "transfer_funds",
+          "args": {
+            "to_account": "36310",
+            "amount": 1460
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ]
+    }
+  ],
+  "auth_passcode": "1483",
+  "split": "test_v3",
+  "template": "fi_transfer_digits",
+  "probe_families": [
+    "field_digit_corruption",
+    "self_correction_cross_turn",
+    "authorize_vs_confirm"
+  ]
+}

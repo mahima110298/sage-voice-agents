@@ -1,0 +1,5 @@
+pytest>=8
+statsmodels>=0.14
+scipy>=1.11
+audioop-lts>=0.2.2; python_version >= "3.13"
+websockets>=13

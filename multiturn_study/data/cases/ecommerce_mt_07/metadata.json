@@ -1,0 +1,111 @@
+{
+  "id": "ecommerce_mt_07",
+  "domain": "ecommerce_support",
+  "title": "Cart quantity corrected twice before ordering",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 3,
+  "severity": "high",
+  "failure_mode": "QUANTITY_MISEXTRACTION",
+  "state_carry_notes": "Quantity is corrected 2->5->4 across the conversation; only the FINAL value (4) is correct at order time.",
+  "mock_data": {
+    "search_products": [
+      {
+        "sku": "CB09",
+        "name": "USB-C Cable",
+        "price": 9.99
+      }
+    ]
+  },
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Add two USB-C cables to my cart -- actually make it five.",
+      "acting_notes": "Self-correct once, clearly.",
+      "gate_expected": "execute",
+      "severity": "medium",
+      "expected_tool_calls": [
+        {
+          "function": "add_to_cart",
+          "args": {
+            "product_id": "CB09",
+            "quantity": 5
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "add_to_cart",
+          "args": {
+            "product_id": "CB09",
+            "quantity": 2
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION"
+      ]
+    },
+    {
+      "turn": 2,
+      "user": "Hold on, four is enough actually, not five.",
+      "acting_notes": "Second correction in a later turn.",
+      "gate_expected": "execute",
+      "severity": "medium",
+      "expected_tool_calls": [
+        {
+          "function": "add_to_cart",
+          "args": {
+            "product_id": "CB09",
+            "quantity": 4
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "add_to_cart",
+          "args": {
+            "product_id": "CB09",
+            "quantity": 5
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION"
+      ]
+    },
+    {
+      "turn": 3,
+      "user": "Okay, place the order.",
+      "acting_notes": "Trusts the agent tracked the final quantity.",
+      "gate_expected": "confirm",
+      "severity": "high",
+      "expected_tool_calls": [
+        {
+          "function": "place_order",
+          "args": {
+            "sku": "CB09",
+            "quantity": 4
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "place_order",
+          "args": {
+            "sku": "CB09",
+            "quantity": 5
+          }
+        },
+        {
+          "function": "place_order",
+          "args": {
+            "sku": "CB09",
+            "quantity": 2
+          }
+        }
+      ],
+      "must_not": null
+    }
+  ]
+}

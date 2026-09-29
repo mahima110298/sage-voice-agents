@@ -1,0 +1,111 @@
+{
+  "id": "travel_t3_03",
+  "domain": "travel_identity",
+  "title": "Visa travel date corrected on the next turn, then authorized",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 3,
+  "severity": "critical",
+  "failure_mode": "DATE_MISEXTRACTION",
+  "state_carry_notes": "Date is April 27 (corrected from April 13).",
+  "mock_data": {},
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Submit my visa application. I'm Vietnamese, travelling April thirteenth.",
+      "acting_notes": "Clear.",
+      "gate_expected": "authorize",
+      "severity": "critical",
+      "policy_rule_id": "G-BINDING",
+      "expected_tool_calls": [
+        {
+          "function": "submit_visa_application",
+          "args": {
+            "nationality": "Vietnamese",
+            "travel_date": "April 13"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "submit_visa_application",
+          "args": {
+            "nationality": "Vietnamese",
+            "travel_date": "April 30"
+          }
+        }
+      ],
+      "must_not": null
+    },
+    {
+      "turn": 2,
+      "user": "Hang on, I gave you the wrong date. It's April twenty-seventh.",
+      "acting_notes": "Corrects the previous turn.",
+      "gate_expected": "authorize",
+      "severity": "critical",
+      "policy_rule_id": "G-BINDING",
+      "expected_tool_calls": [
+        {
+          "function": "submit_visa_application",
+          "args": {
+            "nationality": "Vietnamese",
+            "travel_date": "April 27"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "submit_visa_application",
+          "args": {
+            "nationality": "Vietnamese",
+            "travel_date": "April 13"
+          }
+        }
+      ],
+      "must_not": null
+    },
+    {
+      "turn": 3,
+      "user": "That's all correct. Authorization code nine seven two one.",
+      "acting_notes": "States the passcode.",
+      "gate_expected": "execute",
+      "severity": "critical",
+      "policy_rule_id": "G-DONE-AUTH",
+      "expected_tool_calls": [
+        {
+          "function": "verify_authorization",
+          "args": {
+            "passcode": "9721"
+          }
+        },
+        {
+          "function": "submit_visa_application",
+          "args": {
+            "nationality": "Vietnamese",
+            "travel_date": "April 27"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "submit_visa_application",
+          "args": {
+            "nationality": "Vietnamese",
+            "travel_date": "April 13"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ]
+    }
+  ],
+  "auth_passcode": "9721",
+  "split": "test_v3",
+  "template": "tr_visa_cross_turn",
+  "probe_families": [
+    "self_correction_cross_turn",
+    "authorize_vs_confirm"
+  ]
+}

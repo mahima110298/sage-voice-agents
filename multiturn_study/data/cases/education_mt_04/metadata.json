@@ -1,0 +1,40 @@
+{
+  "id": "education_mt_04",
+  "domain": "education_student_services",
+  "title": "Course code corrected before checking drop deadline",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 1,
+  "severity": "low",
+  "failure_mode": "FIELD_DIGIT_CORRUPTION",
+  "state_carry_notes": "Course code self-corrects PHYS110->PHYS101; the deadline check must use the corrected code.",
+  "mock_data": {},
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Can I still drop PHYS110 -- sorry, PHYS101?",
+      "acting_notes": "Self-correct clearly.",
+      "gate_expected": "execute",
+      "severity": "low",
+      "expected_tool_calls": [
+        {
+          "function": "check_drop_deadline",
+          "args": {
+            "course_code": "PHYS101"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "check_drop_deadline",
+          "args": {
+            "course_code": "PHYS110"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION"
+      ]
+    }
+  ]
+}

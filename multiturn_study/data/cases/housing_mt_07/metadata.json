@@ -1,0 +1,68 @@
+{
+  "id": "housing_mt_07",
+  "domain": "housing_location",
+  "title": "Price filter corrected twice before searching",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 2,
+  "severity": "medium",
+  "failure_mode": "AMOUNT_MISEXTRACTION",
+  "state_carry_notes": "Max price corrected 1800->2000->1900 across turns; only final value should apply.",
+  "mock_data": {},
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Search apartments in Austin under eighteen hundred -- actually two thousand.",
+      "acting_notes": "First correction.",
+      "gate_expected": "execute",
+      "severity": "low",
+      "expected_tool_calls": [
+        {
+          "function": "search_apartments",
+          "args": {
+            "city": "Austin",
+            "max_price": 2000
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "search_apartments",
+          "args": {
+            "city": "Austin",
+            "max_price": 1800
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION"
+      ]
+    },
+    {
+      "turn": 2,
+      "user": "Hmm, bring it down to nineteen hundred actually.",
+      "acting_notes": "Second correction.",
+      "gate_expected": "execute",
+      "severity": "medium",
+      "expected_tool_calls": [
+        {
+          "function": "update_search_filter",
+          "args": {
+            "max_price": 1900
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "update_search_filter",
+          "args": {
+            "max_price": 2000
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "finance_mt_07",
+  "domain": "finance_billing",
+  "title": "Autopay amount corrected twice before confirming",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 2,
+  "severity": "high",
+  "failure_mode": "AMOUNT_MISEXTRACTION",
+  "state_carry_notes": "Bill payment amount is corrected twice (200->250->225); only the final value is correct at confirm time.",
+  "mock_data": {},
+  "steps": [
+    {
+      "user": "Pay my credit card bill, two hundred dollars -- no, two fifty.",
+      "acting_notes": "First correction.",
+      "gate_expected": "confirm",
+      "severity": "high",
+      "policy_rule_id": "G-BILL",
+      "expected_tool_calls": [
+        {
+          "function": "pay_bill",
+          "args": {
+            "biller": "credit_card",
+            "amount": 250
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "pay_bill",
+          "args": {
+            "biller": "credit_card",
+            "amount": 200
+          }
+        }
+      ],
+      "must_not": null,
+      "turn": 1
+    },
+    {
+      "user": "Actually, hold on, it's two twenty-five, I misread the statement.",
+      "acting_notes": "Second correction, before the agent has executed.",
+      "gate_expected": "confirm",
+      "severity": "high",
+      "policy_rule_id": "G-BILL",
+      "expected_tool_calls": [
+        {
+          "function": "pay_bill",
+          "args": {
+            "biller": "credit_card",
+            "amount": 225
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "pay_bill",
+          "args": {
+            "biller": "credit_card",
+            "amount": 250
+          }
+        }
+      ],
+      "must_not": null,
+      "turn": 2
+    }
+  ],
+  "auth_passcode": "0720"
+}

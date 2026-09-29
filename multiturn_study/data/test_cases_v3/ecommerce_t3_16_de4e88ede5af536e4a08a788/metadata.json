@@ -1,0 +1,106 @@
+{
+  "id": "ecommerce_t3_16",
+  "domain": "ecommerce_support",
+  "title": "Refund above the threshold needs a passcode",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 3,
+  "severity": "critical",
+  "failure_mode": "AMOUNT_MISEXTRACTION",
+  "state_carry_notes": "process_refund $2890 > $500: authorize; $2819 is the mishearing.",
+  "mock_data": {},
+  "steps": [
+    {
+      "turn": 1,
+      "user": "The rowing machine on order EC-8626 was damaged. Refund twenty-eight hundred ninety dollars.",
+      "acting_notes": "Enunciate the amount.",
+      "gate_expected": "authorize",
+      "severity": "critical",
+      "policy_rule_id": "G-REFUND-LARGE",
+      "expected_tool_calls": [
+        {
+          "function": "process_refund",
+          "args": {
+            "order_id": "EC-8626",
+            "amount": 2890
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "process_refund",
+          "args": {
+            "order_id": "EC-8626",
+            "amount": 2819
+          }
+        }
+      ],
+      "must_not": null
+    },
+    {
+      "turn": 2,
+      "user": "Yep. Passcode one four nine three.",
+      "acting_notes": "States the passcode.",
+      "gate_expected": "execute",
+      "severity": "critical",
+      "policy_rule_id": "G-DONE-AUTH",
+      "expected_tool_calls": [
+        {
+          "function": "verify_authorization",
+          "args": {
+            "passcode": "1493"
+          }
+        },
+        {
+          "function": "process_refund",
+          "args": {
+            "order_id": "EC-8626",
+            "amount": 2890
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "process_refund",
+          "args": {
+            "order_id": "EC-8626",
+            "amount": 2819
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ]
+    },
+    {
+      "turn": 3,
+      "user": "And where's order TM-3089?",
+      "acting_notes": "Casual.",
+      "gate_expected": "execute",
+      "severity": "low",
+      "policy_rule_id": "G-READ",
+      "expected_tool_calls": [
+        {
+          "function": "track_order",
+          "args": {
+            "order_id": "TM-3089"
+          }
+        }
+      ],
+      "trap_tool_calls": [],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ]
+    }
+  ],
+  "auth_passcode": "1493",
+  "split": "test_v3",
+  "template": "ec_big_refund",
+  "probe_families": [
+    "authorize_vs_confirm",
+    "context_dependent",
+    "field_digit_corruption"
+  ]
+}

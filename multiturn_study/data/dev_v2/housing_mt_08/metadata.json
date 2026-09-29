@@ -1,0 +1,81 @@
+{
+  "id": "housing_mt_08",
+  "domain": "housing_location",
+  "title": "Two candidate units resolved by elimination, then commute check",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 2,
+  "severity": "low",
+  "failure_mode": "AMBIGUOUS_TARGET",
+  "state_carry_notes": "Turn 2 rules OUT one unit rather than naming the other directly -- agent must infer the remaining unit.",
+  "mock_data": {
+    "get_recent_search_results": [
+      {
+        "unit_id": "3C",
+        "bedrooms": 1,
+        "price": 1500
+      },
+      {
+        "unit_id": "3D",
+        "bedrooms": 1,
+        "price": 1650
+      }
+    ]
+  },
+  "steps": [
+    {
+      "user": "What's the commute like for one of the units I saw?",
+      "acting_notes": "Vague; two candidates.",
+      "gate_expected": "clarify",
+      "severity": "low",
+      "policy_rule_id": "G-AMBIG",
+      "expected_tool_calls": [
+        {
+          "function": "get_recent_search_results",
+          "args": {}
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "calculate_commute",
+          "args": {
+            "origin": "unit 3C"
+          }
+        }
+      ],
+      "must_not": null,
+      "turn": 1
+    },
+    {
+      "user": "Not the cheaper one, the other. How far is it from downtown?",
+      "acting_notes": "Elimination by price, not direct naming.",
+      "gate_expected": "execute",
+      "severity": "low",
+      "policy_rule_id": "G-READ",
+      "expected_tool_calls": [
+        {
+          "function": "calculate_commute",
+          "args": {
+            "origin": "unit 3D",
+            "destination": "downtown"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "calculate_commute",
+          "args": {
+            "origin": "unit 3C",
+            "destination": "downtown"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ],
+      "turn": 2
+    }
+  ],
+  "auth_passcode": "3293"
+}

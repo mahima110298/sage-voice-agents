@@ -1,0 +1,76 @@
+{
+  "id": "ecommerce_mt_08",
+  "domain": "ecommerce_support",
+  "title": "Two ambiguous orders resolved by elimination across turns",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 2,
+  "severity": "high",
+  "failure_mode": "AMBIGUOUS_TARGET",
+  "state_carry_notes": "Turn 2 rules OUT one candidate rather than naming the target directly ('not the shoes one') -- the agent must infer the remaining order, not re-ask.",
+  "mock_data": {
+    "list_orders": [
+      {
+        "order_id": "VX441",
+        "item": "running shoes",
+        "status": "in_transit"
+      },
+      {
+        "order_id": "VX448",
+        "item": "yoga mat",
+        "status": "in_transit"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "turn": 1,
+      "user": "One of my orders is late, can you check what's going on?",
+      "acting_notes": "Vague; two in-transit orders.",
+      "gate_expected": "clarify",
+      "severity": "low",
+      "expected_tool_calls": [
+        {
+          "function": "list_orders",
+          "args": {}
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "track_order",
+          "args": {
+            "order_id": "VX441"
+          }
+        }
+      ],
+      "must_not": null
+    },
+    {
+      "turn": 2,
+      "user": "Not the shoes one, the other one.",
+      "acting_notes": "Resolves by elimination, not by naming the target directly.",
+      "gate_expected": "execute",
+      "severity": "low",
+      "expected_tool_calls": [
+        {
+          "function": "track_order",
+          "args": {
+            "order_id": "VX448"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "track_order",
+          "args": {
+            "order_id": "VX441"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ]
+    }
+  ]
+}

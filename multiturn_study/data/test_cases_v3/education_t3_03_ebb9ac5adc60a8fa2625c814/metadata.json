@@ -1,0 +1,92 @@
+{
+  "id": "education_t3_03",
+  "domain": "education_student_services",
+  "title": "Accommodation date corrected on the next turn",
+  "difficulty": "medium",
+  "multiturn": true,
+  "num_steps": 3,
+  "severity": "medium",
+  "failure_mode": "DATE_MISEXTRACTION",
+  "state_carry_notes": "Date is March 15, not March 4.",
+  "mock_data": {},
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Schedule my ARTH160 exam accommodation for March fourth.",
+      "acting_notes": "Clear.",
+      "gate_expected": "execute",
+      "severity": "medium",
+      "policy_rule_id": "G-REVERSIBLE",
+      "expected_tool_calls": [
+        {
+          "function": "schedule_exam_accommodation",
+          "args": {
+            "course_code": "ARTH160",
+            "date": "March 4"
+          }
+        }
+      ],
+      "trap_tool_calls": [],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ]
+    },
+    {
+      "turn": 2,
+      "user": "Sorry, that's wrong. The exam is on March fifteenth.",
+      "acting_notes": "Corrects the previous turn.",
+      "gate_expected": "execute",
+      "severity": "medium",
+      "policy_rule_id": "G-REVERSIBLE",
+      "expected_tool_calls": [
+        {
+          "function": "schedule_exam_accommodation",
+          "args": {
+            "course_code": "ARTH160",
+            "date": "March 15"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "schedule_exam_accommodation",
+          "args": {
+            "course_code": "ARTH160",
+            "date": "March 4"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION"
+      ]
+    },
+    {
+      "turn": 3,
+      "user": "Is RELG105 still droppable?",
+      "acting_notes": "Casual.",
+      "gate_expected": "execute",
+      "severity": "low",
+      "policy_rule_id": "G-READ",
+      "expected_tool_calls": [
+        {
+          "function": "check_drop_deadline",
+          "args": {
+            "course_code": "RELG105"
+          }
+        }
+      ],
+      "trap_tool_calls": [],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ]
+    }
+  ],
+  "auth_passcode": "2177",
+  "split": "test_v3",
+  "template": "ed_accom_cross_turn",
+  "probe_families": [
+    "self_correction_cross_turn"
+  ]
+}

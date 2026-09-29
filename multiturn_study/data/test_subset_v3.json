@@ -1,0 +1,172 @@
+{
+  "seed": 20260928,
+  "n": 80,
+  "strata": {
+    "counseling_support|clarify": {
+      "n_full": 4,
+      "n_test": 3
+    },
+    "counseling_support|confirm": {
+      "n_full": 8,
+      "n_test": 5
+    },
+    "counseling_support|execute": {
+      "n_full": 5,
+      "n_test": 3
+    },
+    "ecommerce_support|authorize": {
+      "n_full": 5,
+      "n_test": 3
+    },
+    "ecommerce_support|confirm": {
+      "n_full": 10,
+      "n_test": 7
+    },
+    "ecommerce_support|execute": {
+      "n_full": 2,
+      "n_test": 1
+    },
+    "education_student_services|clarify": {
+      "n_full": 3,
+      "n_test": 2
+    },
+    "education_student_services|confirm": {
+      "n_full": 8,
+      "n_test": 5
+    },
+    "education_student_services|execute": {
+      "n_full": 6,
+      "n_test": 4
+    },
+    "finance_billing|authorize": {
+      "n_full": 10,
+      "n_test": 7
+    },
+    "finance_billing|confirm": {
+      "n_full": 6,
+      "n_test": 4
+    },
+    "finance_billing|execute": {
+      "n_full": 1,
+      "n_test": 1
+    },
+    "housing_location|authorize": {
+      "n_full": 7,
+      "n_test": 5
+    },
+    "housing_location|confirm": {
+      "n_full": 6,
+      "n_test": 4
+    },
+    "housing_location|execute": {
+      "n_full": 4,
+      "n_test": 3
+    },
+    "negotiation_procurement|authorize": {
+      "n_full": 5,
+      "n_test": 3
+    },
+    "negotiation_procurement|confirm": {
+      "n_full": 10,
+      "n_test": 7
+    },
+    "negotiation_procurement|execute": {
+      "n_full": 2,
+      "n_test": 1
+    },
+    "travel_identity|authorize": {
+      "n_full": 10,
+      "n_test": 7
+    },
+    "travel_identity|confirm": {
+      "n_full": 6,
+      "n_test": 4
+    },
+    "travel_identity|execute": {
+      "n_full": 1,
+      "n_test": 1
+    }
+  },
+  "case_ids": [
+    "counseling_t3_01",
+    "counseling_t3_02",
+    "counseling_t3_03",
+    "counseling_t3_05",
+    "counseling_t3_06",
+    "counseling_t3_07",
+    "counseling_t3_08",
+    "counseling_t3_09",
+    "counseling_t3_10",
+    "counseling_t3_11",
+    "counseling_t3_17",
+    "ecommerce_t3_01",
+    "ecommerce_t3_02",
+    "ecommerce_t3_03",
+    "ecommerce_t3_04",
+    "ecommerce_t3_07",
+    "ecommerce_t3_09",
+    "ecommerce_t3_10",
+    "ecommerce_t3_12",
+    "ecommerce_t3_13",
+    "ecommerce_t3_15",
+    "ecommerce_t3_16",
+    "education_t3_03",
+    "education_t3_04",
+    "education_t3_05",
+    "education_t3_09",
+    "education_t3_10",
+    "education_t3_11",
+    "education_t3_12",
+    "education_t3_13",
+    "education_t3_14",
+    "education_t3_16",
+    "education_t3_17",
+    "finance_t3_01",
+    "finance_t3_02",
+    "finance_t3_04",
+    "finance_t3_05",
+    "finance_t3_07",
+    "finance_t3_10",
+    "finance_t3_11",
+    "finance_t3_12",
+    "finance_t3_13",
+    "finance_t3_14",
+    "finance_t3_15",
+    "finance_t3_17",
+    "housing_t3_01",
+    "housing_t3_02",
+    "housing_t3_04",
+    "housing_t3_05",
+    "housing_t3_06",
+    "housing_t3_08",
+    "housing_t3_09",
+    "housing_t3_11",
+    "housing_t3_13",
+    "housing_t3_15",
+    "housing_t3_16",
+    "housing_t3_17",
+    "negotiation_t3_01",
+    "negotiation_t3_02",
+    "negotiation_t3_04",
+    "negotiation_t3_06",
+    "negotiation_t3_08",
+    "negotiation_t3_09",
+    "negotiation_t3_12",
+    "negotiation_t3_13",
+    "negotiation_t3_14",
+    "negotiation_t3_15",
+    "negotiation_t3_17",
+    "travel_t3_01",
+    "travel_t3_02",
+    "travel_t3_03",
+    "travel_t3_04",
+    "travel_t3_06",
+    "travel_t3_08",
+    "travel_t3_09",
+    "travel_t3_10",
+    "travel_t3_12",
+    "travel_t3_14",
+    "travel_t3_16",
+    "travel_t3_17"
+  ]
+}

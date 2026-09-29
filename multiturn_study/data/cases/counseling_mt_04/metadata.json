@@ -1,0 +1,42 @@
+{
+  "id": "counseling_mt_04",
+  "domain": "counseling_support",
+  "title": "Client ID corrected before scheduling",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 1,
+  "severity": "low",
+  "failure_mode": "FIELD_DIGIT_CORRUPTION",
+  "state_carry_notes": "Client ID self-corrects wc_1180->wc_1108; the scheduled check-in must use the corrected ID.",
+  "mock_data": {},
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Set up my weekly check-in, client ID wc_1180 -- sorry, wc_1108.",
+      "acting_notes": "Self-correct the ID clearly.",
+      "gate_expected": "execute",
+      "severity": "low",
+      "expected_tool_calls": [
+        {
+          "function": "schedule_checkin",
+          "args": {
+            "client_id": "wc_1108",
+            "type": "weekly_mood"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "schedule_checkin",
+          "args": {
+            "client_id": "wc_1180",
+            "type": "weekly_mood"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "negotiation_mt_07",
+  "domain": "negotiation_procurement",
+  "title": "Offer amount corrected twice before submitting",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 2,
+  "severity": "high",
+  "failure_mode": "AMOUNT_MISEXTRACTION",
+  "state_carry_notes": "Offer amount corrected twice (150k->175k->165k); only final value should be submitted.",
+  "mock_data": {},
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Offer them one fifty on D-5502 -- actually one seventy-five.",
+      "acting_notes": "First correction.",
+      "gate_expected": "confirm",
+      "severity": "high",
+      "expected_tool_calls": [
+        {
+          "function": "submit_offer",
+          "args": {
+            "deal_id": "D-5502",
+            "amount": 175000
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "submit_offer",
+          "args": {
+            "deal_id": "D-5502",
+            "amount": 150000
+          }
+        }
+      ],
+      "must_not": null
+    },
+    {
+      "turn": 2,
+      "user": "Wait, let's do one sixty-five instead, I want more room to negotiate.",
+      "acting_notes": "Second correction.",
+      "gate_expected": "confirm",
+      "severity": "high",
+      "expected_tool_calls": [
+        {
+          "function": "submit_offer",
+          "args": {
+            "deal_id": "D-5502",
+            "amount": 165000
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "submit_offer",
+          "args": {
+            "deal_id": "D-5502",
+            "amount": 175000
+          }
+        }
+      ],
+      "must_not": null
+    }
+  ]
+}

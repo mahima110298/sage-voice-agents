@@ -1,0 +1,68 @@
+{
+  "id": "finance_mt_04",
+  "domain": "finance_billing",
+  "title": "Payee account number corrupted then corrected, critical transfer",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 2,
+  "severity": "critical",
+  "failure_mode": "FIELD_DIGIT_CORRUPTION",
+  "state_carry_notes": "Account number self-corrects 8821->8281; the authorize-turn readback must use 8281, not the pre-correction digits.",
+  "mock_data": {},
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Send two hundred dollars to account 8821 -- no wait, 8281.",
+      "acting_notes": "Self-correct the account digits clearly.",
+      "gate_expected": "authorize",
+      "severity": "critical",
+      "expected_tool_calls": [
+        {
+          "function": "transfer_funds",
+          "args": {
+            "to_account": "8281",
+            "amount": 200
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "transfer_funds",
+          "args": {
+            "to_account": "8821",
+            "amount": 200
+          }
+        }
+      ],
+      "must_not": null
+    },
+    {
+      "turn": 2,
+      "user": "Yes, go ahead -- seven four two nine.",
+      "acting_notes": "States the passcode.",
+      "gate_expected": "execute",
+      "severity": "critical",
+      "expected_tool_calls": [
+        {
+          "function": "verify_authorization",
+          "args": {
+            "passcode": "7429"
+          }
+        },
+        {
+          "function": "transfer_funds",
+          "args": {
+            "to_account": "8281",
+            "amount": 200
+          }
+        }
+      ],
+      "trap_tool_calls": [],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ]
+    }
+  ],
+  "auth_passcode": "7429"
+}

@@ -1,0 +1,610 @@
+{
+  "counseling_mt_01": {
+    "voice": "sage",
+    "gender_label": "female",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "southern_us",
+    "accent_descriptor": "a Southern United States"
+  },
+  "counseling_mt_02": {
+    "voice": "fable",
+    "gender_label": "male",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "latino_english",
+    "accent_descriptor": "a Latino/Spanish-accented English"
+  },
+  "counseling_mt_03": {
+    "voice": "ash",
+    "gender_label": "male",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "aave",
+    "accent_descriptor": "an African American English (AAVE)"
+  },
+  "counseling_mt_04": {
+    "voice": "coral",
+    "gender_label": "female",
+    "age_bracket": "teen",
+    "age_descriptor": "a teenager, around 16 years old",
+    "accent": "irish",
+    "accent_descriptor": "an Irish"
+  },
+  "counseling_mt_05": {
+    "voice": "ballad",
+    "gender_label": "male",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "general_american",
+    "accent_descriptor": "a neutral General American"
+  },
+  "counseling_mt_06": {
+    "voice": "alloy",
+    "gender_label": "neutral",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "general_american",
+    "accent_descriptor": "a neutral General American"
+  },
+  "counseling_mt_07": {
+    "voice": "coral",
+    "gender_label": "female",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "filipino_english",
+    "accent_descriptor": "a Filipino English"
+  },
+  "counseling_mt_08": {
+    "voice": "verse",
+    "gender_label": "male",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "filipino_english",
+    "accent_descriptor": "a Filipino English"
+  },
+  "counseling_mt_09": {
+    "voice": "fable",
+    "gender_label": "male",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "british_rp",
+    "accent_descriptor": "a British Received Pronunciation (Standard Southern British)"
+  },
+  "counseling_mt_10": {
+    "voice": "coral",
+    "gender_label": "female",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "latino_english",
+    "accent_descriptor": "a Latino/Spanish-accented English"
+  },
+  "counseling_mt_11": {
+    "voice": "alloy",
+    "gender_label": "neutral",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "chinese_english",
+    "accent_descriptor": "a Chinese-accented English"
+  },
+  "counseling_mt_12": {
+    "voice": "alloy",
+    "gender_label": "neutral",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "scottish",
+    "accent_descriptor": "a Scottish"
+  },
+  "counseling_mt_13": {
+    "voice": "coral",
+    "gender_label": "female",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "scottish",
+    "accent_descriptor": "a Scottish"
+  },
+  "counseling_mt_14": {
+    "voice": "fable",
+    "gender_label": "male",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "southern_us",
+    "accent_descriptor": "a Southern United States"
+  },
+  "ecommerce_mt_04": {
+    "voice": "sage",
+    "gender_label": "female",
+    "age_bracket": "teen",
+    "age_descriptor": "a teenager, around 16 years old",
+    "accent": "chinese_english",
+    "accent_descriptor": "a Chinese-accented English"
+  },
+  "ecommerce_mt_05": {
+    "voice": "echo",
+    "gender_label": "male",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "scottish",
+    "accent_descriptor": "a Scottish"
+  },
+  "ecommerce_mt_06": {
+    "voice": "ballad",
+    "gender_label": "male",
+    "age_bracket": "teen",
+    "age_descriptor": "a teenager, around 16 years old",
+    "accent": "nigerian_english",
+    "accent_descriptor": "a Nigerian English"
+  },
+  "ecommerce_mt_07": {
+    "voice": "shimmer",
+    "gender_label": "female",
+    "age_bracket": "teen",
+    "age_descriptor": "a teenager, around 16 years old",
+    "accent": "filipino_english",
+    "accent_descriptor": "a Filipino English"
+  },
+  "ecommerce_mt_08": {
+    "voice": "ash",
+    "gender_label": "male",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "nigerian_english",
+    "accent_descriptor": "a Nigerian English"
+  },
+  "ecommerce_mt_09": {
+    "voice": "ballad",
+    "gender_label": "male",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "chinese_english",
+    "accent_descriptor": "a Chinese-accented English"
+  },
+  "ecommerce_mt_10": {
+    "voice": "ballad",
+    "gender_label": "male",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "british_rp",
+    "accent_descriptor": "a British Received Pronunciation (Standard Southern British)"
+  },
+  "ecommerce_mt_11": {
+    "voice": "echo",
+    "gender_label": "male",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "aave",
+    "accent_descriptor": "an African American English (AAVE)"
+  },
+  "ecommerce_mt_12": {
+    "voice": "echo",
+    "gender_label": "male",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "scottish",
+    "accent_descriptor": "a Scottish"
+  },
+  "education_mt_01": {
+    "voice": "onyx",
+    "gender_label": "male",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "chinese_english",
+    "accent_descriptor": "a Chinese-accented English"
+  },
+  "education_mt_02": {
+    "voice": "coral",
+    "gender_label": "female",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "irish",
+    "accent_descriptor": "an Irish"
+  },
+  "education_mt_03": {
+    "voice": "verse",
+    "gender_label": "male",
+    "age_bracket": "teen",
+    "age_descriptor": "a teenager, around 16 years old",
+    "accent": "indian_english",
+    "accent_descriptor": "an Indian English"
+  },
+  "education_mt_04": {
+    "voice": "nova",
+    "gender_label": "female",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "filipino_english",
+    "accent_descriptor": "a Filipino English"
+  },
+  "education_mt_05": {
+    "voice": "shimmer",
+    "gender_label": "female",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "indian_english",
+    "accent_descriptor": "an Indian English"
+  },
+  "education_mt_06": {
+    "voice": "alloy",
+    "gender_label": "neutral",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "latino_english",
+    "accent_descriptor": "a Latino/Spanish-accented English"
+  },
+  "education_mt_07": {
+    "voice": "shimmer",
+    "gender_label": "female",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "scottish",
+    "accent_descriptor": "a Scottish"
+  },
+  "education_mt_08": {
+    "voice": "alloy",
+    "gender_label": "neutral",
+    "age_bracket": "teen",
+    "age_descriptor": "a teenager, around 16 years old",
+    "accent": "nigerian_english",
+    "accent_descriptor": "a Nigerian English"
+  },
+  "education_mt_09": {
+    "voice": "alloy",
+    "gender_label": "neutral",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "irish",
+    "accent_descriptor": "an Irish"
+  },
+  "education_mt_10": {
+    "voice": "ash",
+    "gender_label": "male",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "chinese_english",
+    "accent_descriptor": "a Chinese-accented English"
+  },
+  "education_mt_11": {
+    "voice": "fable",
+    "gender_label": "male",
+    "age_bracket": "teen",
+    "age_descriptor": "a teenager, around 16 years old",
+    "accent": "scottish",
+    "accent_descriptor": "a Scottish"
+  },
+  "education_mt_12": {
+    "voice": "coral",
+    "gender_label": "female",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "southern_us",
+    "accent_descriptor": "a Southern United States"
+  },
+  "education_mt_13": {
+    "voice": "ballad",
+    "gender_label": "male",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "irish",
+    "accent_descriptor": "an Irish"
+  },
+  "finance_mt_04": {
+    "voice": "ash",
+    "gender_label": "male",
+    "age_bracket": "teen",
+    "age_descriptor": "a teenager, around 16 years old",
+    "accent": "scottish",
+    "accent_descriptor": "a Scottish"
+  },
+  "finance_mt_05": {
+    "voice": "ash",
+    "gender_label": "male",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "southern_us",
+    "accent_descriptor": "a Southern United States"
+  },
+  "finance_mt_06": {
+    "voice": "ballad",
+    "gender_label": "male",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "filipino_english",
+    "accent_descriptor": "a Filipino English"
+  },
+  "finance_mt_07": {
+    "voice": "sage",
+    "gender_label": "female",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "chinese_english",
+    "accent_descriptor": "a Chinese-accented English"
+  },
+  "finance_mt_08": {
+    "voice": "nova",
+    "gender_label": "female",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "british_rp",
+    "accent_descriptor": "a British Received Pronunciation (Standard Southern British)"
+  },
+  "finance_mt_09": {
+    "voice": "coral",
+    "gender_label": "female",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "aave",
+    "accent_descriptor": "an African American English (AAVE)"
+  },
+  "finance_mt_10": {
+    "voice": "onyx",
+    "gender_label": "male",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "general_american",
+    "accent_descriptor": "a neutral General American"
+  },
+  "finance_mt_11": {
+    "voice": "onyx",
+    "gender_label": "male",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "indian_english",
+    "accent_descriptor": "an Indian English"
+  },
+  "finance_mt_12": {
+    "voice": "sage",
+    "gender_label": "female",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "aave",
+    "accent_descriptor": "an African American English (AAVE)"
+  },
+  "housing_mt_04": {
+    "voice": "sage",
+    "gender_label": "female",
+    "age_bracket": "teen",
+    "age_descriptor": "a teenager, around 16 years old",
+    "accent": "nigerian_english",
+    "accent_descriptor": "a Nigerian English"
+  },
+  "housing_mt_05": {
+    "voice": "sage",
+    "gender_label": "female",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "filipino_english",
+    "accent_descriptor": "a Filipino English"
+  },
+  "housing_mt_06": {
+    "voice": "shimmer",
+    "gender_label": "female",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "filipino_english",
+    "accent_descriptor": "a Filipino English"
+  },
+  "housing_mt_07": {
+    "voice": "ash",
+    "gender_label": "male",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "southern_us",
+    "accent_descriptor": "a Southern United States"
+  },
+  "housing_mt_08": {
+    "voice": "echo",
+    "gender_label": "male",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "southern_us",
+    "accent_descriptor": "a Southern United States"
+  },
+  "housing_mt_09": {
+    "voice": "coral",
+    "gender_label": "female",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "australian",
+    "accent_descriptor": "an Australian"
+  },
+  "housing_mt_10": {
+    "voice": "onyx",
+    "gender_label": "male",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "scottish",
+    "accent_descriptor": "a Scottish"
+  },
+  "housing_mt_11": {
+    "voice": "verse",
+    "gender_label": "male",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "aave",
+    "accent_descriptor": "an African American English (AAVE)"
+  },
+  "housing_mt_12": {
+    "voice": "onyx",
+    "gender_label": "male",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "latino_english",
+    "accent_descriptor": "a Latino/Spanish-accented English"
+  },
+  "negotiation_mt_01": {
+    "voice": "alloy",
+    "gender_label": "neutral",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "irish",
+    "accent_descriptor": "an Irish"
+  },
+  "negotiation_mt_02": {
+    "voice": "ballad",
+    "gender_label": "male",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "irish",
+    "accent_descriptor": "an Irish"
+  },
+  "negotiation_mt_03": {
+    "voice": "ash",
+    "gender_label": "male",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "australian",
+    "accent_descriptor": "an Australian"
+  },
+  "negotiation_mt_04": {
+    "voice": "alloy",
+    "gender_label": "neutral",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "latino_english",
+    "accent_descriptor": "a Latino/Spanish-accented English"
+  },
+  "negotiation_mt_05": {
+    "voice": "sage",
+    "gender_label": "female",
+    "age_bracket": "teen",
+    "age_descriptor": "a teenager, around 16 years old",
+    "accent": "southern_us",
+    "accent_descriptor": "a Southern United States"
+  },
+  "negotiation_mt_06": {
+    "voice": "nova",
+    "gender_label": "female",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "filipino_english",
+    "accent_descriptor": "a Filipino English"
+  },
+  "negotiation_mt_07": {
+    "voice": "shimmer",
+    "gender_label": "female",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "southern_us",
+    "accent_descriptor": "a Southern United States"
+  },
+  "negotiation_mt_08": {
+    "voice": "shimmer",
+    "gender_label": "female",
+    "age_bracket": "young_adult",
+    "age_descriptor": "a young adult in their mid-20s",
+    "accent": "indian_english",
+    "accent_descriptor": "an Indian English"
+  },
+  "negotiation_mt_09": {
+    "voice": "ash",
+    "gender_label": "male",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "irish",
+    "accent_descriptor": "an Irish"
+  },
+  "negotiation_mt_10": {
+    "voice": "alloy",
+    "gender_label": "neutral",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "aave",
+    "accent_descriptor": "an African American English (AAVE)"
+  },
+  "negotiation_mt_11": {
+    "voice": "echo",
+    "gender_label": "male",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "australian",
+    "accent_descriptor": "an Australian"
+  },
+  "negotiation_mt_12": {
+    "voice": "echo",
+    "gender_label": "male",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "british_rp",
+    "accent_descriptor": "a British Received Pronunciation (Standard Southern British)"
+  },
+  "negotiation_mt_13": {
+    "voice": "sage",
+    "gender_label": "female",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "scottish",
+    "accent_descriptor": "a Scottish"
+  },
+  "travel_mt_04": {
+    "voice": "echo",
+    "gender_label": "male",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "australian",
+    "accent_descriptor": "an Australian"
+  },
+  "travel_mt_05": {
+    "voice": "verse",
+    "gender_label": "male",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "indian_english",
+    "accent_descriptor": "an Indian English"
+  },
+  "travel_mt_06": {
+    "voice": "fable",
+    "gender_label": "male",
+    "age_bracket": "teen",
+    "age_descriptor": "a teenager, around 16 years old",
+    "accent": "southern_us",
+    "accent_descriptor": "a Southern United States"
+  },
+  "travel_mt_07": {
+    "voice": "coral",
+    "gender_label": "female",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "filipino_english",
+    "accent_descriptor": "a Filipino English"
+  },
+  "travel_mt_08": {
+    "voice": "sage",
+    "gender_label": "female",
+    "age_bracket": "teen",
+    "age_descriptor": "a teenager, around 16 years old",
+    "accent": "filipino_english",
+    "accent_descriptor": "a Filipino English"
+  },
+  "travel_mt_09": {
+    "voice": "nova",
+    "gender_label": "female",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "indian_english",
+    "accent_descriptor": "an Indian English"
+  },
+  "travel_mt_10": {
+    "voice": "onyx",
+    "gender_label": "male",
+    "age_bracket": "middle_aged",
+    "age_descriptor": "a middle-aged adult in their 40s",
+    "accent": "australian",
+    "accent_descriptor": "an Australian"
+  },
+  "travel_mt_11": {
+    "voice": "shimmer",
+    "gender_label": "female",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "british_rp",
+    "accent_descriptor": "a British Received Pronunciation (Standard Southern British)"
+  },
+  "travel_mt_12": {
+    "voice": "coral",
+    "gender_label": "female",
+    "age_bracket": "older_adult",
+    "age_descriptor": "an older adult in their late 60s, with the slower, deliberate pacing common at that age",
+    "accent": "chinese_english",
+    "accent_descriptor": "a Chinese-accented English"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "finance_mt_01": [
+    4
+  ],
+  "housing_mt_01": [
+    4
+  ],
+  "housing_mt_03": [
+    4
+  ],
+  "travel_mt_01": [
+    3
+  ],
+  "travel_mt_02": [
+    3
+  ],
+  "travel_mt_03": [
+    4
+  ],
+  "ecommerce_mt_12": [
+    4
+  ],
+  "finance_mt_04": [
+    2
+  ],
+  "finance_mt_06": [
+    3
+  ],
+  "finance_mt_12": [
+    4
+  ],
+  "housing_mt_04": [
+    2
+  ],
+  "housing_mt_06": [
+    3
+  ],
+  "housing_mt_08": [
+    2
+  ],
+  "housing_mt_10": [
+    3
+  ],
+  "housing_mt_12": [
+    4
+  ],
+  "negotiation_mt_01": [
+    4
+  ],
+  "negotiation_mt_06": [
+    3
+  ],
+  "travel_mt_04": [
+    2
+  ],
+  "travel_mt_05": [
+    3
+  ],
+  "travel_mt_07": [
+    3
+  ],
+  "travel_mt_08": [
+    3
+  ],
+  "travel_mt_09": [
+    3
+  ],
+  "travel_mt_10": [
+    4
+  ],
+  "travel_mt_11": [
+    4
+  ],
+  "travel_mt_12": [
+    4
+  ]
+}

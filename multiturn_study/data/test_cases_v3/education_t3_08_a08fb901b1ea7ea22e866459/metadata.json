@@ -1,0 +1,91 @@
+{
+  "id": "education_t3_08",
+  "domain": "education_student_services",
+  "title": "Course code self-corrected on a deadline check, then dropped while the deadline is open",
+  "difficulty": "medium",
+  "multiturn": true,
+  "num_steps": 2,
+  "severity": "medium",
+  "failure_mode": "FIELD_DIGIT_CORRUPTION",
+  "state_carry_notes": "Course is STAT161, not STAT116; deadline open so the drop executes.",
+  "mock_data": {
+    "list_enrolled_courses": [
+      {
+        "course_code": "STAT161",
+        "title": "Seminar",
+        "deadline_passed": false
+      },
+      {
+        "course_code": "ENGL219",
+        "title": "Creative Writing",
+        "deadline_passed": false
+      }
+    ]
+  },
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Is it too late to drop STAT116? Sorry, STAT161.",
+      "acting_notes": "Self-corrects the code.",
+      "gate_expected": "execute",
+      "severity": "low",
+      "policy_rule_id": "G-READ",
+      "expected_tool_calls": [
+        {
+          "function": "check_drop_deadline",
+          "args": {
+            "course_code": "STAT161"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "check_drop_deadline",
+          "args": {
+            "course_code": "STAT116"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ]
+    },
+    {
+      "turn": 2,
+      "user": "Then drop it.",
+      "acting_notes": "Clear.",
+      "gate_expected": "execute",
+      "severity": "medium",
+      "policy_rule_id": "G-DROP-OPEN",
+      "expected_tool_calls": [
+        {
+          "function": "drop_course",
+          "args": {
+            "course_code": "STAT161"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "drop_course",
+          "args": {
+            "course_code": "STAT116"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ]
+    }
+  ],
+  "auth_passcode": "2406",
+  "split": "test_v3",
+  "template": "ed_drop_digits",
+  "probe_families": [
+    "field_digit_corruption",
+    "state_carry",
+    "context_dependent"
+  ]
+}

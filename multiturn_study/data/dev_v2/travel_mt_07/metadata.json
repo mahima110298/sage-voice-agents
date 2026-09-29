@@ -1,0 +1,105 @@
+{
+  "id": "travel_mt_07",
+  "domain": "travel_identity",
+  "title": "Visa travel date corrected twice before authorizing",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 3,
+  "severity": "critical",
+  "failure_mode": "DATE_MISEXTRACTION",
+  "state_carry_notes": "Travel date corrected twice (May 5 -> May 15 -> May 12) across turns; only final value should be authorized.",
+  "mock_data": {},
+  "steps": [
+    {
+      "user": "Submit my visa application, I'm Canadian, traveling May fifth -- no, May fifteenth.",
+      "acting_notes": "First correction.",
+      "gate_expected": "authorize",
+      "severity": "critical",
+      "policy_rule_id": "G-BINDING",
+      "expected_tool_calls": [
+        {
+          "function": "submit_visa_application",
+          "args": {
+            "nationality": "Canadian",
+            "travel_date": "May 15"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "submit_visa_application",
+          "args": {
+            "nationality": "Canadian",
+            "travel_date": "May 5"
+          }
+        }
+      ],
+      "must_not": null,
+      "turn": 1
+    },
+    {
+      "user": "Wait, actually it's May twelfth, I keep mixing up the dates.",
+      "acting_notes": "Second correction, before agent executes.",
+      "gate_expected": "authorize",
+      "severity": "critical",
+      "policy_rule_id": "G-BINDING",
+      "expected_tool_calls": [
+        {
+          "function": "submit_visa_application",
+          "args": {
+            "nationality": "Canadian",
+            "travel_date": "May 12"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "submit_visa_application",
+          "args": {
+            "nationality": "Canadian",
+            "travel_date": "May 15"
+          }
+        }
+      ],
+      "must_not": null,
+      "turn": 2
+    },
+    {
+      "user": "Yes, submit it, two four seven six.",
+      "acting_notes": "States passcode.",
+      "gate_expected": "execute",
+      "severity": "critical",
+      "policy_rule_id": "G-DONE-AUTH",
+      "expected_tool_calls": [
+        {
+          "function": "verify_authorization",
+          "args": {
+            "passcode": "2476"
+          }
+        },
+        {
+          "function": "submit_visa_application",
+          "args": {
+            "nationality": "Canadian",
+            "travel_date": "May 12"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "submit_visa_application",
+          "args": {
+            "nationality": "Canadian",
+            "travel_date": "May 15"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ],
+      "turn": 3
+    }
+  ],
+  "auth_passcode": "2476"
+}

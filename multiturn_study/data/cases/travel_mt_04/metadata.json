@@ -1,0 +1,65 @@
+{
+  "id": "travel_mt_04",
+  "domain": "travel_identity",
+  "title": "PNR corrupted then corrected, critical cancellation",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 2,
+  "severity": "critical",
+  "failure_mode": "FIELD_DIGIT_CORRUPTION",
+  "state_carry_notes": "PNR self-corrects RT819->RT891; the authorize-turn readback must use RT891.",
+  "mock_data": {},
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Cancel my booking, PNR RT819 -- no wait, RT891.",
+      "acting_notes": "Self-correct the PNR clearly.",
+      "gate_expected": "authorize",
+      "severity": "critical",
+      "expected_tool_calls": [
+        {
+          "function": "cancel_booking",
+          "args": {
+            "pnr": "RT891"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "cancel_booking",
+          "args": {
+            "pnr": "RT819"
+          }
+        }
+      ],
+      "must_not": null
+    },
+    {
+      "turn": 2,
+      "user": "Yes, seven four two nine.",
+      "acting_notes": "States passcode.",
+      "gate_expected": "execute",
+      "severity": "critical",
+      "expected_tool_calls": [
+        {
+          "function": "verify_authorization",
+          "args": {
+            "passcode": "7429"
+          }
+        },
+        {
+          "function": "cancel_booking",
+          "args": {
+            "pnr": "RT891"
+          }
+        }
+      ],
+      "trap_tool_calls": [],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ]
+    }
+  ],
+  "auth_passcode": "7429"
+}

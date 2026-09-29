@@ -1,0 +1,111 @@
+{
+  "id": "housing_t3_03",
+  "domain": "housing_location",
+  "title": "Deposit amount corrected on the next turn, then authorized",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 3,
+  "severity": "critical",
+  "failure_mode": "AMOUNT_MISEXTRACTION",
+  "state_carry_notes": "Deposit is 3650 (corrected from 2660) in the read-back and the final call.",
+  "mock_data": {},
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Pay the deposit on unit 44K. It's twenty-six hundred sixty dollars.",
+      "acting_notes": "Clear.",
+      "gate_expected": "authorize",
+      "severity": "critical",
+      "policy_rule_id": "G-BINDING",
+      "expected_tool_calls": [
+        {
+          "function": "pay_deposit",
+          "args": {
+            "unit_id": "44K",
+            "amount": 2660
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "pay_deposit",
+          "args": {
+            "unit_id": "44K",
+            "amount": 2616
+          }
+        }
+      ],
+      "must_not": null
+    },
+    {
+      "turn": 2,
+      "user": "Sorry, I misread the listing. The deposit is thirty-six hundred fifty.",
+      "acting_notes": "Corrects the previous turn.",
+      "gate_expected": "authorize",
+      "severity": "critical",
+      "policy_rule_id": "G-BINDING",
+      "expected_tool_calls": [
+        {
+          "function": "pay_deposit",
+          "args": {
+            "unit_id": "44K",
+            "amount": 3650
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "pay_deposit",
+          "args": {
+            "unit_id": "44K",
+            "amount": 2660
+          }
+        }
+      ],
+      "must_not": null
+    },
+    {
+      "turn": 3,
+      "user": "Yes, that's right. My passcode is four five one one.",
+      "acting_notes": "States the passcode.",
+      "gate_expected": "execute",
+      "severity": "critical",
+      "policy_rule_id": "G-DONE-AUTH",
+      "expected_tool_calls": [
+        {
+          "function": "verify_authorization",
+          "args": {
+            "passcode": "4511"
+          }
+        },
+        {
+          "function": "pay_deposit",
+          "args": {
+            "unit_id": "44K",
+            "amount": 3650
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "pay_deposit",
+          "args": {
+            "unit_id": "44K",
+            "amount": 2660
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ]
+    }
+  ],
+  "auth_passcode": "4511",
+  "split": "test_v3",
+  "template": "ho_deposit_cross_turn",
+  "probe_families": [
+    "self_correction_cross_turn",
+    "authorize_vs_confirm"
+  ]
+}

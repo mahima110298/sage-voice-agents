@@ -1,0 +1,119 @@
+{
+  "_note": "USD per 1M tokens. null = the source does not list that rate (never guessed). cached_* rates are optional; when absent, cached tokens are billed at the uncached rate (an over-estimate). Read by rp.runner.price_usage.",
+  "google/gemini-2.5-flash-lite": {
+    "role": "verifier (OpenRouter)",
+    "input_per_mtok": 0.10, "output_per_mtok": 0.40,
+    "audio_input_per_mtok": null, "audio_output_per_mtok": null,
+    "cached_input_per_mtok": 0.01,
+    "source": "https://openrouter.ai/api/v1/models (pricing.prompt 0.0000001, completion 0.0000004, input_cache_read 0.00000001)",
+    "retrieved": "2026-09-28"
+  },
+  "openai/gpt-4.1-mini": {
+    "role": "cascade LLM (OpenRouter)",
+    "input_per_mtok": 0.40, "output_per_mtok": 1.60,
+    "audio_input_per_mtok": null, "audio_output_per_mtok": null,
+    "cached_input_per_mtok": 0.10,
+    "source": "https://openrouter.ai/api/v1/models (pricing.prompt 0.0000004, completion 0.0000016, input_cache_read 0.0000001)",
+    "retrieved": "2026-09-28"
+  },
+  "anthropic/claude-haiku-4.5": {
+    "role": "primary judge (OpenRouter)",
+    "input_per_mtok": 1.00, "output_per_mtok": 5.00,
+    "audio_input_per_mtok": null, "audio_output_per_mtok": null,
+    "cached_input_per_mtok": 0.10,
+    "source": "https://openrouter.ai/api/v1/models (pricing.prompt 0.000001, completion 0.000005, input_cache_read 0.0000001)",
+    "retrieved": "2026-09-28"
+  },
+  "meta-llama/llama-3.3-70b-instruct": {
+    "role": "second judge family (OpenRouter)",
+    "input_per_mtok": 0.10, "output_per_mtok": 0.32,
+    "audio_input_per_mtok": null, "audio_output_per_mtok": null,
+    "source": "https://openrouter.ai/api/v1/models (pricing.prompt 0.0000001, completion 0.00000032)",
+    "retrieved": "2026-09-28"
+  },
+  "gpt-4o-mini-transcribe": {
+    "role": "ASR (OpenAI; transcripts are cached, the runner never transcribes)",
+    "input_per_mtok": 1.25, "output_per_mtok": 5.00,
+    "audio_input_per_mtok": null, "audio_output_per_mtok": null,
+    "per_minute_usd": 0.003,
+    "source": "https://developers.openai.com/api/docs/pricing (Transcription table: gpt-4o-mini-transcribe $1.25 / $5.00 / $0.003 per minute; no separate audio-token rate listed)",
+    "retrieved": "2026-09-28"
+  },
+  "gemini-3.8-live": {
+    "role": "speech agent (Gemini Live)",
+    "input_per_mtok": 0.75, "output_per_mtok": 4.50,
+    "audio_input_per_mtok": 3.00, "audio_output_per_mtok": 12.00,
+    "source": "https://ai.google.dev/gemini-api/docs/pricing (section 'Gemini 3.8 Live, Gemini 3.8 Live Extended Thinking, and Gemini 3.1 Flash Live Preview', paid tier; output price includes thinking tokens; no cached rate listed)",
+    "retrieved": "2026-09-28"
+  },
+  "gemini-3.1-flash-live-preview": {
+    "role": "speech agent (Gemini Live)",
+    "input_per_mtok": 0.75, "output_per_mtok": 4.50,
+    "audio_input_per_mtok": 3.00, "audio_output_per_mtok": 12.00,
+    "source": "https://ai.google.dev/gemini-api/docs/pricing (same shared section as gemini-3.8-live: 'Gemini 3.8 Live, Gemini 3.8 Live Extended Thinking, and Gemini 3.1 Flash Live Preview', one price table for all three ids; no cached rate listed)",
+    "retrieved": "2026-09-28"
+  },
+  "gemini-2.5-flash-native-audio-latest": {
+    "role": "speech agent (Gemini Live)",
+    "input_per_mtok": 0.50, "output_per_mtok": 2.00,
+    "audio_input_per_mtok": 3.00, "audio_output_per_mtok": 12.00,
+    "source": "https://ai.google.dev/gemini-api/docs/pricing (section 'Gemini 2.5 Flash Native Audio (Live API)', listed id gemini-2.5-flash-native-audio-preview-12-2025; the -latest alias is assumed to bill at this listed rate; no cached rate listed)",
+    "retrieved": "2026-09-28"
+  },
+  "gpt-realtime-2.1": {
+    "role": "speech agent (OpenAI Realtime)",
+    "input_per_mtok": 4.00, "output_per_mtok": 24.00,
+    "audio_input_per_mtok": 32.00, "audio_output_per_mtok": 64.00,
+    "cached_input_per_mtok": 0.40, "cached_audio_input_per_mtok": 0.40,
+    "source": "https://developers.openai.com/api/docs/pricing (Realtime/audio table: Audio $32.00 / cached $0.40 / out $64.00; Text $4.00 / cached $0.40 / out $24.00)",
+    "retrieved": "2026-09-28"
+  },
+  "gpt-realtime-2.1-mini": {
+    "role": "speech agent (OpenAI Realtime)",
+    "input_per_mtok": 0.60, "output_per_mtok": 2.40,
+    "audio_input_per_mtok": 10.00, "audio_output_per_mtok": 20.00,
+    "cached_input_per_mtok": 0.06, "cached_audio_input_per_mtok": 0.30,
+    "source": "https://developers.openai.com/api/docs/pricing (Realtime/audio table: Audio $10.00 / cached $0.30 / out $20.00; Text $0.60 / cached $0.06 / out $2.40)",
+    "retrieved": "2026-09-28"
+  },
+  "gpt-realtime-1.5": {
+    "role": "speech agent (OpenAI Realtime)",
+    "input_per_mtok": 4.00, "output_per_mtok": 16.00,
+    "audio_input_per_mtok": 32.00, "audio_output_per_mtok": 64.00,
+    "cached_input_per_mtok": 0.40, "cached_audio_input_per_mtok": 0.40,
+    "source": "https://developers.openai.com/api/docs/pricing (pricing table data for gpt-realtime-1.5: Audio 32 / cached 0.4 / out 64; Text 4 / cached 0.4 / out 16)",
+    "retrieved": "2026-09-28"
+  },
+  "qwen/qwen3.8-omni-flash": {
+    "role": "audio-in chat agent (OpenRouter; open weights)",
+    "input_per_mtok": 0.15, "output_per_mtok": 0.47,
+    "audio_input_per_mtok": null, "audio_output_per_mtok": null,
+    "cached_input_per_mtok": 0.016,
+    "source": "https://openrouter.ai/api/v1/models (pricing.prompt 0.00000015, completion 0.00000047, input_cache_read 0.000000016; no separate audio rate: audio is folded into prompt_tokens, reported cost matched prompt_tokens x prompt rate in the 2026-09-28 probe)",
+    "retrieved": "2026-09-28"
+  },
+  "mistralai/voxtral-small-24b-2507": {
+    "role": "audio-in chat agent (OpenRouter; open weights)",
+    "input_per_mtok": 0.1, "output_per_mtok": 0.3,
+    "audio_input_per_mtok": 100.0, "audio_output_per_mtok": null,
+    "cached_input_per_mtok": 0.01,
+    "source": "https://openrouter.ai/api/v1/models (pricing.prompt 0.0000001, completion 0.0000003, audio 0.0001 per prompt_tokens_details.audio_tokens unit, input_cache_read 0.00000001; probe: reported cost 0.0007948 = 948 text x 1e-7 + 7 audio x 1e-4)",
+    "retrieved": "2026-09-28"
+  },
+  "openai/gpt-oss-120b": {
+    "role": "open cascade LLM (Groq; open weights)",
+    "input_per_mtok": 0.15, "output_per_mtok": 0.6,
+    "audio_input_per_mtok": null, "audio_output_per_mtok": null,
+    "cached_input_per_mtok": 0.075,
+    "source": "https://console.groq.com/docs/model/openai/gpt-oss-120b (Input $0.15 / Cached input $0.075 / Output $0.60 per 1M tokens; OpenRouter lists the same rates)",
+    "retrieved": "2026-09-28"
+  },
+  "whisper-large-v3": {
+    "role": "open cascade ASR (Groq; transcripts cached next to the wav, not in turn usage)",
+    "input_per_mtok": null, "output_per_mtok": null,
+    "audio_input_per_mtok": null, "audio_output_per_mtok": null,
+    "per_hour_usd": 0.111, "min_billed_seconds": 10,
+    "source": "https://console.groq.com/docs/speech-to-text (whisper-large-v3 $0.111/hour; minimum billing 10 seconds per request)",
+    "retrieved": "2026-09-28"
+  }
+}

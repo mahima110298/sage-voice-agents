@@ -1,0 +1,88 @@
+{
+  "id": "travel_t3_17",
+  "domain": "travel_identity",
+  "title": "Passcode stated wrong, then corrected in the same breath",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 2,
+  "severity": "critical",
+  "failure_mode": "WRONG_CREDENTIAL",
+  "state_carry_notes": "Verify with 9778, not 7978.",
+  "mock_data": {
+    "list_bookings": [
+      {
+        "pnr": "SUH3G8",
+        "destination": "Porto",
+        "fare": "non-refundable"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Cancel my Porto booking.",
+      "acting_notes": "Clear.",
+      "gate_expected": "authorize",
+      "severity": "critical",
+      "policy_rule_id": "G-CANCEL-NONREF",
+      "expected_tool_calls": [
+        {
+          "function": "cancel_booking",
+          "args": {
+            "pnr": "SUH3G8"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "cancel_booking",
+          "args": {
+            "pnr": "SUA3G8"
+          }
+        }
+      ],
+      "must_not": null
+    },
+    {
+      "turn": 2,
+      "user": "Yes. Passcode seven nine seven eight. Sorry, no, nine seven seven eight.",
+      "acting_notes": "Corrects the passcode.",
+      "gate_expected": "execute",
+      "severity": "critical",
+      "policy_rule_id": "G-DONE-AUTH",
+      "expected_tool_calls": [
+        {
+          "function": "verify_authorization",
+          "args": {
+            "passcode": "9778"
+          }
+        },
+        {
+          "function": "cancel_booking",
+          "args": {
+            "pnr": "SUH3G8"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "verify_authorization",
+          "args": {
+            "passcode": "7978"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ]
+    }
+  ],
+  "auth_passcode": "9778",
+  "split": "test_v3",
+  "template": "tr_wc",
+  "probe_families": [
+    "wrong_credential",
+    "self_correction_cross_turn"
+  ]
+}

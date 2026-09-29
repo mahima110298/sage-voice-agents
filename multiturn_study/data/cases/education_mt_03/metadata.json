@@ -1,0 +1,61 @@
+{
+  "id": "education_mt_03",
+  "domain": "education_student_services",
+  "title": "Schedule an exam accommodation, with a self-corrected date",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 2,
+  "severity": "medium",
+  "failure_mode": "DATE_MISEXTRACTION",
+  "state_carry_notes": "Turn 2 corrects the exam date from October 3rd to October 10th mid-utterance; the agent must use the corrected date, not the pre-correction one \u2014 reversible, so no confirmation gate is required, just correct extraction.",
+  "mock_data": {},
+  "steps": [
+    {
+      "user": "Which of my courses have accommodations on file?",
+      "acting_notes": "Clear, read-only.",
+      "gate_expected": "execute",
+      "severity": "low",
+      "expected_tool_calls": [
+        {
+          "function": "list_enrolled_courses",
+          "args": {}
+        }
+      ],
+      "trap_tool_calls": [],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ],
+      "turn": 1
+    },
+    {
+      "user": "Schedule my CHEM201 accommodation for October third \u2014 wait, actually October tenth.",
+      "acting_notes": "Self-correct the date clearly mid-utterance.",
+      "gate_expected": "execute",
+      "severity": "medium",
+      "expected_tool_calls": [
+        {
+          "function": "schedule_exam_accommodation",
+          "args": {
+            "course_code": "CHEM201",
+            "date": "October 10"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "schedule_exam_accommodation",
+          "args": {
+            "course_code": "CHEM201",
+            "date": "October 3"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ],
+      "turn": 2
+    }
+  ]
+}

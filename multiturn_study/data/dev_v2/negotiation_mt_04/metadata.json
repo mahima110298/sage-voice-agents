@@ -1,0 +1,42 @@
+{
+  "id": "negotiation_mt_04",
+  "domain": "negotiation_procurement",
+  "title": "Deal ID corrected before checking status",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 1,
+  "severity": "low",
+  "failure_mode": "FIELD_DIGIT_CORRUPTION",
+  "state_carry_notes": "Deal ID self-corrects D-3301->D-3310; the status check must use the corrected ID.",
+  "mock_data": {},
+  "steps": [
+    {
+      "user": "What's the status on D-3301 -- sorry, D-3310.",
+      "acting_notes": "Self-correct clearly.",
+      "gate_expected": "execute",
+      "severity": "low",
+      "policy_rule_id": "G-READ",
+      "expected_tool_calls": [
+        {
+          "function": "get_deal_status",
+          "args": {
+            "deal_id": "D-3310"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "get_deal_status",
+          "args": {
+            "deal_id": "D-3301"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION"
+      ],
+      "turn": 1
+    }
+  ],
+  "auth_passcode": "7232"
+}

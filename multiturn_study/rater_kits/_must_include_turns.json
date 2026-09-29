@@ -1,0 +1,2017 @@
+{
+ "description": "Dev turns that the human-validation sample must include (Task 19b judge-consistency check). Each pair is the same dev_v2 case and turn, with identical executed tool calls and normalized agent text similarity >= 0.9 (difflib ratio), but different primary-judge verdicts. Keys are [agent, config, pass, case_id, turn] and point at results/rp/dev_v2/{agent}/{config}/pass{pass}.jsonl. SAGE pass 2 is the withdrawn policy-prompt variant (partial run), kept as a record.",
+ "similarity_threshold": 0.9,
+ "split": "dev_v2",
+ "keys": [
+  [
+   "gemini-3.8-live",
+   "B0",
+   1,
+   "counseling_mt_06",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "B0",
+   1,
+   "counseling_mt_09",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "B0",
+   1,
+   "ecommerce_mt_02",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "B0",
+   1,
+   "education_mt_10",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "B0",
+   1,
+   "negotiation_mt_02",
+   3
+  ],
+  [
+   "gemini-3.8-live",
+   "B0",
+   1,
+   "negotiation_mt_05",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "B0",
+   1,
+   "travel_mt_05",
+   3
+  ],
+  [
+   "gemini-3.8-live",
+   "B0",
+   1,
+   "travel_mt_11",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "B1",
+   1,
+   "counseling_mt_08",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "B1",
+   1,
+   "counseling_mt_09",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "B1",
+   1,
+   "counseling_mt_14",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "B1",
+   1,
+   "education_mt_09",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "B1",
+   1,
+   "negotiation_mt_05",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "B1",
+   1,
+   "negotiation_mt_08",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "B1",
+   1,
+   "travel_mt_11",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "B2",
+   1,
+   "counseling_mt_09",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "B2",
+   1,
+   "counseling_mt_14",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "B2",
+   1,
+   "ecommerce_mt_02",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "B2",
+   1,
+   "finance_mt_10",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "B2",
+   1,
+   "negotiation_mt_07",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "B3",
+   1,
+   "counseling_mt_06",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "B3",
+   1,
+   "education_mt_10",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "B3",
+   1,
+   "negotiation_mt_05",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "B3",
+   1,
+   "negotiation_mt_08",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "B3",
+   1,
+   "negotiation_mt_12",
+   4
+  ],
+  [
+   "gemini-3.8-live",
+   "B3",
+   1,
+   "travel_mt_05",
+   3
+  ],
+  [
+   "gemini-3.8-live",
+   "B3",
+   1,
+   "travel_mt_07",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "B4",
+   1,
+   "counseling_mt_08",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "B4",
+   1,
+   "counseling_mt_09",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "B4",
+   1,
+   "education_mt_10",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "B4",
+   1,
+   "negotiation_mt_02",
+   3
+  ],
+  [
+   "gemini-3.8-live",
+   "B4",
+   1,
+   "negotiation_mt_05",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "B4",
+   1,
+   "travel_mt_05",
+   3
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   1,
+   "counseling_mt_09",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   1,
+   "education_mt_10",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   1,
+   "finance_mt_10",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   1,
+   "negotiation_mt_02",
+   3
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   1,
+   "travel_mt_11",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   2,
+   "counseling_mt_02",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   2,
+   "counseling_mt_09",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   2,
+   "ecommerce_mt_06",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   2,
+   "education_mt_10",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   2,
+   "finance_mt_10",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   11,
+   "education_mt_10",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   11,
+   "negotiation_mt_12",
+   4
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   11,
+   "travel_mt_07",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   12,
+   "counseling_mt_02",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   12,
+   "education_mt_10",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   12,
+   "travel_mt_07",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   13,
+   "education_mt_09",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   13,
+   "education_mt_10",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   13,
+   "negotiation_mt_12",
+   4
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   13,
+   "travel_mt_07",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   20,
+   "counseling_mt_06",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   20,
+   "counseling_mt_08",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   20,
+   "counseling_mt_14",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   20,
+   "ecommerce_mt_06",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   20,
+   "education_mt_10",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   20,
+   "negotiation_mt_05",
+   2
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   20,
+   "negotiation_mt_07",
+   1
+  ],
+  [
+   "gemini-3.8-live",
+   "SAGE",
+   20,
+   "travel_mt_07",
+   1
+  ],
+  [
+   "qwen3.8-omni-flash",
+   "B0",
+   1,
+   "finance_mt_10",
+   4
+  ],
+  [
+   "qwen3.8-omni-flash",
+   "B1",
+   1,
+   "education_mt_12",
+   4
+  ],
+  [
+   "qwen3.8-omni-flash",
+   "B2",
+   1,
+   "education_mt_12",
+   4
+  ],
+  [
+   "qwen3.8-omni-flash",
+   "B2",
+   1,
+   "finance_mt_10",
+   4
+  ],
+  [
+   "qwen3.8-omni-flash",
+   "B3",
+   1,
+   "education_mt_12",
+   4
+  ],
+  [
+   "qwen3.8-omni-flash",
+   "B4",
+   1,
+   "education_mt_12",
+   4
+  ],
+  [
+   "qwen3.8-omni-flash",
+   "SAGE",
+   1,
+   "education_mt_12",
+   4
+  ],
+  [
+   "qwen3.8-omni-flash",
+   "SAGE",
+   11,
+   "education_mt_12",
+   4
+  ],
+  [
+   "qwen3.8-omni-flash",
+   "SAGE",
+   12,
+   "education_mt_12",
+   4
+  ],
+  [
+   "qwen3.8-omni-flash",
+   "SAGE",
+   12,
+   "finance_mt_10",
+   4
+  ],
+  [
+   "qwen3.8-omni-flash",
+   "SAGE",
+   13,
+   "education_mt_12",
+   4
+  ],
+  [
+   "qwen3.8-omni-flash",
+   "SAGE",
+   13,
+   "finance_mt_10",
+   4
+  ],
+  [
+   "qwen3.8-omni-flash",
+   "SAGE",
+   20,
+   "education_mt_12",
+   4
+  ]
+ ],
+ "pairs": [
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "counseling_mt_06",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    20,
+    "counseling_mt_06",
+    1
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B1",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B2",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    2,
+    "counseling_mt_09",
+    1
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B1",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B1",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B2",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B2",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    2,
+    "counseling_mt_09",
+    1
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "SAGE",
+    1,
+    "counseling_mt_09",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    2,
+    "counseling_mt_09",
+    1
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B1",
+    1,
+    "counseling_mt_14",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    20,
+    "counseling_mt_14",
+    1
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B2",
+    1,
+    "counseling_mt_14",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    20,
+    "counseling_mt_14",
+    1
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    11,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    2,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    11,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    2,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    11,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    2,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "qwen3.8-omni-flash",
+    "B0",
+    1,
+    "finance_mt_10",
+    4
+   ],
+   "b": [
+    "qwen3.8-omni-flash",
+    "B2",
+    1,
+    "finance_mt_10",
+    4
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "qwen3.8-omni-flash",
+    "B0",
+    1,
+    "finance_mt_10",
+    4
+   ],
+   "b": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    12,
+    "finance_mt_10",
+    4
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "qwen3.8-omni-flash",
+    "B2",
+    1,
+    "finance_mt_10",
+    4
+   ],
+   "b": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    13,
+    "finance_mt_10",
+    4
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    12,
+    "finance_mt_10",
+    4
+   ],
+   "b": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    13,
+    "finance_mt_10",
+    4
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "negotiation_mt_02",
+    3
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "negotiation_mt_02",
+    3
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "negotiation_mt_02",
+    3
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    1,
+    "negotiation_mt_02",
+    3
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "negotiation_mt_12",
+    4
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    11,
+    "negotiation_mt_12",
+    4
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "SAGE",
+    11,
+    "negotiation_mt_12",
+    4
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    13,
+    "negotiation_mt_12",
+    4
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 1.0,
+   "a": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "travel_mt_05",
+    3
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "travel_mt_05",
+    3
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.985,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "travel_mt_11",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    1,
+    "travel_mt_11",
+    2
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.982,
+   "a": [
+    "qwen3.8-omni-flash",
+    "B4",
+    1,
+    "education_mt_12",
+    4
+   ],
+   "b": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    1,
+    "education_mt_12",
+    4
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.969,
+   "a": [
+    "gemini-3.8-live",
+    "B2",
+    1,
+    "negotiation_mt_07",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    20,
+    "negotiation_mt_07",
+    1
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.965,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.965,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    12,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.965,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    13,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.965,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    20,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.965,
+   "a": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.965,
+   "a": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    12,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.965,
+   "a": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    13,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.965,
+   "a": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    20,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.965,
+   "a": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.965,
+   "a": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    12,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.965,
+   "a": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    13,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.965,
+   "a": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "education_mt_10",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    20,
+    "education_mt_10",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.957,
+   "a": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "negotiation_mt_05",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    20,
+    "negotiation_mt_05",
+    2
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.956,
+   "a": [
+    "gemini-3.8-live",
+    "B1",
+    1,
+    "negotiation_mt_05",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "negotiation_mt_05",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.95,
+   "a": [
+    "qwen3.8-omni-flash",
+    "B1",
+    1,
+    "education_mt_12",
+    4
+   ],
+   "b": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    20,
+    "education_mt_12",
+    4
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.95,
+   "a": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "travel_mt_07",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    11,
+    "travel_mt_07",
+    1
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.949,
+   "a": [
+    "qwen3.8-omni-flash",
+    "B3",
+    1,
+    "education_mt_12",
+    4
+   ],
+   "b": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    13,
+    "education_mt_12",
+    4
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.946,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "negotiation_mt_05",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B1",
+    1,
+    "negotiation_mt_05",
+    2
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.939,
+   "a": [
+    "qwen3.8-omni-flash",
+    "B2",
+    1,
+    "education_mt_12",
+    4
+   ],
+   "b": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    1,
+    "education_mt_12",
+    4
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.936,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "negotiation_mt_05",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    20,
+    "negotiation_mt_05",
+    2
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.935,
+   "a": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    11,
+    "education_mt_12",
+    4
+   ],
+   "b": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    20,
+    "education_mt_12",
+    4
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.935,
+   "a": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    12,
+    "education_mt_12",
+    4
+   ],
+   "b": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    20,
+    "education_mt_12",
+    4
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.933,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "counseling_mt_06",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "counseling_mt_06",
+    1
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.933,
+   "a": [
+    "gemini-3.8-live",
+    "B1",
+    1,
+    "counseling_mt_08",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "counseling_mt_08",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.933,
+   "a": [
+    "gemini-3.8-live",
+    "B1",
+    1,
+    "counseling_mt_08",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    20,
+    "counseling_mt_08",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.932,
+   "a": [
+    "gemini-3.8-live",
+    "SAGE",
+    12,
+    "travel_mt_07",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    13,
+    "travel_mt_07",
+    1
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.926,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "travel_mt_11",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B1",
+    1,
+    "travel_mt_11",
+    2
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.924,
+   "a": [
+    "gemini-3.8-live",
+    "SAGE",
+    2,
+    "ecommerce_mt_06",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    20,
+    "ecommerce_mt_06",
+    2
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.919,
+   "a": [
+    "gemini-3.8-live",
+    "B1",
+    1,
+    "negotiation_mt_05",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "negotiation_mt_05",
+    2
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.919,
+   "a": [
+    "gemini-3.8-live",
+    "B1",
+    1,
+    "negotiation_mt_08",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "negotiation_mt_08",
+    2
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.913,
+   "a": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    1,
+    "education_mt_12",
+    4
+   ],
+   "b": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    11,
+    "education_mt_12",
+    4
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.913,
+   "a": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    1,
+    "education_mt_12",
+    4
+   ],
+   "b": [
+    "qwen3.8-omni-flash",
+    "SAGE",
+    12,
+    "education_mt_12",
+    4
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.913,
+   "a": [
+    "gemini-3.8-live",
+    "B1",
+    1,
+    "education_mt_09",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    13,
+    "education_mt_09",
+    2
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.909,
+   "a": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "negotiation_mt_05",
+    2
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    20,
+    "negotiation_mt_05",
+    2
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.908,
+   "a": [
+    "gemini-3.8-live",
+    "B2",
+    1,
+    "finance_mt_10",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    1,
+    "finance_mt_10",
+    1
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.908,
+   "a": [
+    "gemini-3.8-live",
+    "SAGE",
+    1,
+    "finance_mt_10",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    2,
+    "finance_mt_10",
+    1
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.905,
+   "a": [
+    "gemini-3.8-live",
+    "SAGE",
+    12,
+    "counseling_mt_02",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    2,
+    "counseling_mt_02",
+    1
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.905,
+   "a": [
+    "gemini-3.8-live",
+    "B3",
+    1,
+    "travel_mt_07",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "SAGE",
+    20,
+    "travel_mt_07",
+    1
+   ],
+   "verdicts": [
+    "FAIL",
+    "PASS"
+   ]
+  },
+  {
+   "sim": 0.903,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "travel_mt_05",
+    3
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B4",
+    1,
+    "travel_mt_05",
+    3
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  },
+  {
+   "sim": 0.901,
+   "a": [
+    "gemini-3.8-live",
+    "B0",
+    1,
+    "ecommerce_mt_02",
+    1
+   ],
+   "b": [
+    "gemini-3.8-live",
+    "B2",
+    1,
+    "ecommerce_mt_02",
+    1
+   ],
+   "verdicts": [
+    "PASS",
+    "FAIL"
+   ]
+  }
+ ],
+ "trial18_pair": {
+  "note": "Task 18 trial (pre-dev_v2-run code); rows live in results/rp/_trial18/dev_v2/... Same blocked cancel_appointment and near-identical re-ask, judged FAIL vs PASS.",
+  "keys": [
+   [
+    "gemini-3.8-live",
+    "SAGE",
+    1,
+    "counseling_mt_02",
+    3
+   ],
+   [
+    "gpt-realtime-2.1",
+    "SAGE",
+    1,
+    "counseling_mt_02",
+    3
+   ]
+  ],
+  "results_root": "results/rp/_trial18"
+ }
+}

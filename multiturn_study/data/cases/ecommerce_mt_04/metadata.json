@@ -1,0 +1,65 @@
+{
+  "id": "ecommerce_mt_04",
+  "domain": "ecommerce_support",
+  "title": "Digit-corrupted order ID, corrected before tracking",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 2,
+  "severity": "low",
+  "failure_mode": "FIELD_DIGIT_CORRUPTION",
+  "state_carry_notes": "Turn 2 corrects the order ID from PN553 to PN533; the agent must track PN533, not the pre-correction PN553.",
+  "mock_data": {},
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Can you check the status of order PN553? Wait, sorry, PN533.",
+      "acting_notes": "Self-correct the order code clearly mid-utterance.",
+      "gate_expected": "execute",
+      "severity": "low",
+      "expected_tool_calls": [
+        {
+          "function": "track_order",
+          "args": {
+            "order_id": "PN533"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "track_order",
+          "args": {
+            "order_id": "PN553"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION",
+        "ASK_CLARIFICATION"
+      ]
+    },
+    {
+      "turn": 2,
+      "user": "Great, and go ahead and cancel that one too.",
+      "acting_notes": "Casual, assumes agent remembers PN533.",
+      "gate_expected": "confirm",
+      "severity": "high",
+      "expected_tool_calls": [
+        {
+          "function": "cancel_order",
+          "args": {
+            "order_id": "PN533"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "cancel_order",
+          "args": {
+            "order_id": "PN553"
+          }
+        }
+      ],
+      "must_not": null
+    }
+  ]
+}

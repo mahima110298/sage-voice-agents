@@ -1,0 +1,70 @@
+{
+  "id": "education_mt_07",
+  "domain": "education_student_services",
+  "title": "Accommodation date corrected twice before scheduling",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 2,
+  "severity": "medium",
+  "failure_mode": "DATE_MISEXTRACTION",
+  "state_carry_notes": "Exam accommodation date corrected twice (Nov 4 -> Nov 14 -> Nov 11) across turns; only final value should apply.",
+  "mock_data": {},
+  "steps": [
+    {
+      "turn": 1,
+      "user": "Schedule my PHYS101 accommodation for November fourth -- actually the fourteenth.",
+      "acting_notes": "First correction.",
+      "gate_expected": "execute",
+      "severity": "medium",
+      "expected_tool_calls": [
+        {
+          "function": "schedule_exam_accommodation",
+          "args": {
+            "course_code": "PHYS101",
+            "date": "November 14"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "schedule_exam_accommodation",
+          "args": {
+            "course_code": "PHYS101",
+            "date": "November 4"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION"
+      ]
+    },
+    {
+      "turn": 2,
+      "user": "Sorry, one more change -- November eleventh, not the fourteenth.",
+      "acting_notes": "Second correction.",
+      "gate_expected": "execute",
+      "severity": "medium",
+      "expected_tool_calls": [
+        {
+          "function": "schedule_exam_accommodation",
+          "args": {
+            "course_code": "PHYS101",
+            "date": "November 11"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "schedule_exam_accommodation",
+          "args": {
+            "course_code": "PHYS101",
+            "date": "November 14"
+          }
+        }
+      ],
+      "must_not": [
+        "ASK_CONFIRMATION"
+      ]
+    }
+  ]
+}

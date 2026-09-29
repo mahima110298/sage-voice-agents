@@ -1,0 +1,109 @@
+{
+  "id": "ecommerce_mt_03",
+  "domain": "ecommerce_support",
+  "title": "Clarify which order, look it up, then refund with amount self-correction",
+  "difficulty": "hard",
+  "multiturn": true,
+  "num_steps": 3,
+  "severity": "high",
+  "failure_mode": "AMOUNT_MISEXTRACTION",
+  "state_carry_notes": "Turn 3 must refund order FR220 (established in turn 2) for the post-correction $40, not the pre-correction $45 and not FR228.",
+  "mock_data": {
+    "list_orders": [
+      {
+        "order_id": "FR220",
+        "item": "jacket",
+        "status": "delivered"
+      },
+      {
+        "order_id": "FR228",
+        "item": "sneakers",
+        "status": "delivered"
+      }
+    ]
+  },
+  "auth_passcode": "9704",
+  "steps": [
+    {
+      "user": "I want a refund on my last order.",
+      "acting_notes": "Vague; two delivered orders exist.",
+      "gate_expected": "clarify",
+      "severity": "low",
+      "policy_rule_id": "G-AMBIG",
+      "expected_tool_calls": [
+        {
+          "function": "list_orders",
+          "args": {}
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "process_refund",
+          "args": {
+            "order_id": "FR220"
+          }
+        }
+      ],
+      "must_not": null,
+      "turn": 1
+    },
+    {
+      "user": "The jacket one.",
+      "acting_notes": "Clear and direct — names the item, not an order code nobody would have memorized.",
+      "gate_expected": "clarify",
+      "severity": "low",
+      "policy_rule_id": "G-SLOT",
+      "expected_tool_calls": [
+        {
+          "function": "track_order",
+          "args": {
+            "order_id": "FR220"
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "track_order",
+          "args": {
+            "order_id": "FR228"
+          }
+        },
+        {
+          "function": "process_refund",
+          "args": {
+            "order_id": "FR220"
+          }
+        }
+      ],
+      "must_not": null,
+      "turn": 2
+    },
+    {
+      "user": "Yes, refund the full amount — forty-five dollars — no wait, it was on sale, forty dollars.",
+      "acting_notes": "Self-correct the dollar amount clearly.",
+      "gate_expected": "confirm",
+      "severity": "high",
+      "policy_rule_id": "G-REFUND",
+      "expected_tool_calls": [
+        {
+          "function": "process_refund",
+          "args": {
+            "order_id": "FR220",
+            "amount": 40
+          }
+        }
+      ],
+      "trap_tool_calls": [
+        {
+          "function": "process_refund",
+          "args": {
+            "order_id": "FR220",
+            "amount": 45
+          }
+        }
+      ],
+      "must_not": null,
+      "turn": 3
+    }
+  ]
+}
